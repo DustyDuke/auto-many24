@@ -48,7 +48,7 @@ function HeadScroll(e, t) {
                                 i = t.hash;
                         if (document.querySelectorAll(i).length) {
                                 var a = window.document.scrollingElement || window.document.body || window.document.documentElement,
-      ;                                  n = document.querySelector(i).getBoundingClientRect().top,
+                                        n = document.querySelector(i).getBoundingClientRect().top,
                                         s = window.scrollY,
                                         r = a.clientTop,
                                         o = document.querySelector(".header.is-fixed").offsetHeight,
