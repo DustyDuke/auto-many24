@@ -41,40 +41,19 @@ function ModalClose(){
   modalWindow.classList.remove('popup-container--active')
 }
 
-function HeadScroll(e, t) {
-        document.addEventListener("click", (function (e) {
-                if (e.target && (e.target.classList.contains("scrollto") || e.target.closest(".scrollto"))) {
-                        var t = e.target.classList.contains("scrollto") ? e.target : e.target.closest(".scrollto"),
-                                i = t.hash;
-                        if (document.querySelectorAll(i).length) {
-                                var a = window.document.scrollingElement || window.document.body || window.document.documentElement,
-                                        n = document.querySelector(i).getBoundingClientRect().top,
-                                        s = window.scrollY,
-                                        r = a.clientTop,
-                                        o = document.querySelector(".header.is-fixed").offsetHeight,
-                                        l = Math.round(n + s - r);
-                                "#" === t.getAttribute("href").charAt(0) && (e.preventDefault(), window.scroll({
-                                        top: l - o,
-                                        behavior: "smooth"
-                                }), window.onscroll = function (e) {
-                                        (window.pageYOffset || document.documentElement.scrollTop) === l && (window.onscroll = null)
-                                })
-                        }
-                }
-        }))
-}
+
 //HeadScroll()
 
 
-function HeadScrollInfo(e, t) {
+function HeadScroll() {
         var i = document.querySelector(".header");
         if (i) {
-                var a = function () {
+                var a = function() {
                         window.scrollY > 0 ? i.classList.add("is-fixed") : i.classList.remove("is-fixed")
                 };
                 a(),
                 window.addEventListener("scroll", a)
         }
 }
-HeadScrollInfo()
+HeadScroll()
 
