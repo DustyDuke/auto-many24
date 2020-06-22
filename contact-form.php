@@ -5,7 +5,7 @@ if (isset($_POST['source_id'])) {$source_id = $_POST['source_id'];}
 if (isset($_POST['comment'])) {$comment = $_POST['comment'];}
 
  
-$address = 'yourmail@gmail.com';
+$address = 'powerfinleasing@gmail.com';
 $sub = "Обратная связь";
 $mes = "Сайт: $name \nНомер телефона: $phone \nРесурс: $source_id \nФорма: $comment ";
 $verify = mail ($address,$sub,$mes,"Content-type:text/plain; charset = utf-8");
