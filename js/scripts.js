@@ -1,4 +1,11 @@
 
+$('#phone').bind("change keyup input click", function() {
+if (this.value.match(/[^0-9]/g)) {
+this.value = this.value.replace(/[^0-9]/g, '');
+alert('Номер телефона может содержать только цифры')
+}
+});
+
 $(".form").submit(function() {
         $.ajax({
             type: "POST",
@@ -25,8 +32,10 @@ $(".form").submit(function() {
     </div>`
 );
     
-        });
+    $('#phone').val('')
+	});
         return false;
+		
     });
 
 
